@@ -7,12 +7,14 @@
             "name": "Your own server",
             "server": "http://localhost",
             "serverInstance": "BC160",
-            "authentication": "UserPassword",
+            "port": 9149,
+            "authentication": "Windows",
             "startupObjectId": 22,
             "startupObjectType": "Page",
             "breakOnError": true,
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,
+            "schemaUpdateMode": "ForceSync",
             "enableSqlInformationDebugger": true
         }
     ]
