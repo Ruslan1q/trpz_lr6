@@ -28,6 +28,25 @@ page 50100 "City List"
                 }
             }
         }
+
+    }
+    actions
+    {
+        area(Processing)
+        {
+            action("Create Copy")
+            {
+                Caption = 'Create Copy of the City';
+                ToolTip = 'Create Copy of the City';
+                Image = Copy;
+                trigger OnAction()
+                var
+                    CityMgt: Codeunit "City Managment";
+                begin
+                    CityMgt.CreateCityCopy("No.");
+                end;
+            }
+        }
     }
 
 }
