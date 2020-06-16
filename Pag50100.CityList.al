@@ -26,6 +26,10 @@ page 50100 "City List"
                 {
                     ApplicationArea = All;
                 }
+                field("City Type"; "City Type")
+                {
+                    ApplicationArea = all;
+                }
             }
         }
 
@@ -48,5 +52,11 @@ page 50100 "City List"
             }
         }
     }
-
+    trigger OnAfterGetRecord()
+    var
+        CityMgt: Codeunit "City Managment";
+    begin
+        CityMgt.SetCityType(Rec);
+        CurrPage.Update(false);
+    end;
 }

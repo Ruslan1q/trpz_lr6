@@ -34,4 +34,20 @@ codeunit 50100 "City Managment"
         NewCityRec.Square := CityRec.Square;
         NewCityRec.Insert();
     end;
+
+    procedure SetCityType(var CityRec: Record City)
+    begin
+        if CityRec.IsEmpty then
+            exit;
+        if CityRec."People Count" > 1000000 then
+            CityRec."City Type" := CityRec."City Type"::Megapolis
+        else
+            if CityRec."People Count" > 100000 then
+                CityRec."City Type" := CityRec."City Type"::City
+            else
+                if CityRec."People Count" > 10000 then
+                    CityRec."City Type" := CityRec."City Type"::Town
+                else
+                    CityRec."City Type" := CityRec."City Type"::Village;
+    end;
 }
