@@ -48,6 +48,10 @@ page 50101 "City Card"
                 {
                     ApplicationArea = All;
                 }
+                field("City Type"; "City Type")
+                {
+                    ApplicationArea = all;
+                }
             }
         }
     }

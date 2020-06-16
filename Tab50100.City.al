@@ -52,6 +52,13 @@ table 50100 City
             Caption = 'No. of Buldings';
             DataClassification = ToBeClassified;
         }
+        field(10; "City Type"; Option)
+        {
+            OptionMembers = "Village","Town","City","Megapolis";
+            Caption = 'City Type';
+            DataClassification = ToBeClassified;
+            Editable = false;
+        }
     }
     keys
     {
