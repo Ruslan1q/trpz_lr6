@@ -21,6 +21,10 @@ table 50100 City
         {
             Caption = 'People Count';
             DataClassification = ToBeClassified;
+            trigger OnValidate()
+            begin
+                OnAfterValidatePeopleCount(Rec);
+            end;
         }
         field(4; "Post Code"; Text[100])
         {
@@ -51,6 +55,7 @@ table 50100 City
         {
             Caption = 'No. of Buldings';
             DataClassification = ToBeClassified;
+
         }
         field(10; "City Type"; Option)
         {
@@ -67,5 +72,10 @@ table 50100 City
             Clustered = true;
         }
     }
+
+    [IntegrationEvent(false, false)]
+    procedure OnAfterValidatePeopleCount(var CityRec: Record City)
+    begin
+    end;
 
 }

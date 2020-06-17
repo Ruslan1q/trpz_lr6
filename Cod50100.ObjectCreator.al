@@ -4,6 +4,7 @@ codeunit 50100 "City Managment"
         CityRec: record City;
         NewCityRec: record City;
         CityPage: page "City Card";
+        user : Record User;
 
     procedure CreateCityCopy(CityNo: Integer)
     begin
