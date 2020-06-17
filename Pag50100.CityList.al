@@ -55,8 +55,15 @@ page 50100 "City List"
     trigger OnAfterGetRecord()
     var
         CityMgt: Codeunit "City Managment";
+        User: Record "City User";
     begin
         CityMgt.SetCityType(Rec);
-        CurrPage.Update(false);
+
+
+        if not User.Get(UserId) then
+            exit;
+        if User.Profile = User.Profile::User then
+            CurrPage.Editable := false;
+        CurrPage.Update();
     end;
 }
