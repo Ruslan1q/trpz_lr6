@@ -62,7 +62,7 @@ page 50100 "City List"
 
         if not User.Get(UserId) then
             exit;
-        if User.Profile = User.Profile::User then
+        if User.Profile <> User.Profile::Dircetor then
             CurrPage.Editable := false;
         CurrPage.Update();
     end;
